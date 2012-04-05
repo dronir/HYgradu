@@ -94,7 +94,7 @@
               textwidth=15cm, textheight=23cm,
               headheight=0.5cm, headsep=0.5cm}%
   \else
-    \geometry{top=2.5cm, left=4.5cm, right=2.5cm,
+    \geometry{top=3.0cm, left=4.3cm, right=1.7cm,
               textwidth=15cm, textheight=23cm,
               headheight=0.5cm, headsep=0.5cm}%
   \fi
@@ -215,7 +215,7 @@
 \level{}
 \newcommand{\prof}[1]{\gdef\@prof{#1}}
 \newcommand{\address}[1]{\gdef\@address{#1}}
-\newcommand{\censor}[1]{\gdef\@censor{#1}}
+\newcommand{\censors}[3]{\gdef\@censor{#1\\&#2\\&#3}}
 \newcommand{\quoting}[1]{\gdef\@quoting{#1}}
 
 
@@ -265,7 +265,7 @@
 \end{large}
 
 
-\vspace{2cm} 
+\vspace{1.5cm} 
 \begin{LARGE}
 {\bf \@title}
 
@@ -295,12 +295,11 @@ Tutor: & \@prof\\
 \else 
 Censors: & \@censor\\
 \fi
-
 &\\
 \end{tabular}
 \end{large}
 
-\vspace{40pt}
+\vspace{20pt}
 %\begin{large}
 %\vspace{1cm}
 
@@ -310,7 +309,7 @@ Censors: & \@censor\\
 \@department
 }
 
-\vspace{0.5cm} 
+\vspace{0.25cm} 
 \@address
 %\end{large}
 
@@ -388,6 +387,7 @@ Censors: & \@censor\\
 \def\abst@tiny{\fontsize{6}{7}\selectfont}
 
 \renewenvironment{abstract}{% GENERATE ABSTRACT
+\pagestyle{empty}
 \if@twoside
 \begin{picture}(580,845)(71,-64)%
 \else
@@ -438,8 +438,7 @@ Censors: & \@censor\\
 UNIVERSITET --- UNIVERSITY OF HELSINKI}}
 \end{picture}
 
-\pagestyle{empty}
-\cleardoublepage
+%\clearpage
 }
 
 
