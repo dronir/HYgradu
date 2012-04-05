@@ -14,7 +14,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}[2000/06/01]
 \ProvidesClass{HYgradu}
-  [2010/10/01 v1.1 Dokumenttiluokka HY-gradua varten TktlTiKi v1.1:n pohjalta]
+  [2010/10/01 v1.1 Dokumenttiluokka gradua varten TktlTiKi v1.1:n pohjalta]
 \newif\if@finnish
 \newif\if@swedish
 \newif\if@english
@@ -245,7 +245,20 @@
   \def\ccs{ACM Computing Classification System (CCS):}%
 }
 
-\renewcommand{\maketitle}{ % GENERATE TITLE PAGE
+%--------------------------------------------------------------------------
+% Set chapter titles
+%\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+\vspace*{50 pt}%
+{\setlength{\parindent}{0pt} \raggedright \normalfont
+\bfseries\Huge
+\thechapter. #1\par\nobreak\vspace{40 pt}}}
+%\makeatother
+
+
+%--------------------------------------------------------------------------
+% GENERATE TITLE PAGE
+\renewcommand{\maketitle}{ 
 \pagenumbering{alph}
 \thispagestyle{empty}
 \begin{titlepage}
@@ -328,9 +341,8 @@ Censors: & \@censor\\
 \newpage
 
 }
-% ------------------------------------
 
-
+%--------------------------------------------------------------------------
 
 \def\division{\char'057}
 
@@ -343,30 +355,10 @@ Censors: & \@censor\\
 \newcommand{\classification}[1]{\gdef\@classification{#1}}
 \newcommand{\keywords}[1]{\gdef\@keywords{#1}}
 
-%\faculty{}
-%\department{}
-%\subject{}
-%\depositeplace{}
-%\additionalinformation{}
-%\numberofpagesinformation{}
-%\classification{}
-%\keywords{}
 
-%\addto\captionsfinnish{%
-%  \faculty{Matemaattis-luonnontieteellinen tiedekunta}
-%  \department{Tietojenkäsittelytieteen laitos}%
-%  \subject{Tietojenkäsittelytiede}
-%}
-%\addto\captionsenglish{%
-%  \faculty{Faculty of Science}
-%  \department{Department of Computer Science}%
-%  \subject{Computer Science}
-%}
-%\addto\captionsswedish{%
-%  \faculty{Matematisk-naturvetenskapliga fakulteten}
-%  \department{Institutionen för datavetenskap}%
-%  \subject{Datavetenskap}
-%}
+
+%--------------------------------------------------------------------------
+
 \newsavebox{\@abstract}
 \newenvironment{@summary}{
   \begin{lrbox}{\@abstract}
@@ -386,7 +378,10 @@ Censors: & \@censor\\
 \def\abst@small{\fontsize{10}{12}\selectfont}
 \def\abst@tiny{\fontsize{6}{7}\selectfont}
 
-\renewenvironment{abstract}{% GENERATE ABSTRACT
+
+%--------------------------------------------------------------------------
+% GENERATE ABSTRACT
+\renewenvironment{abstract}{
 \pagestyle{empty}
 \if@twoside
 \begin{picture}(580,845)(71,-64)%
@@ -444,4 +439,4 @@ UNIVERSITET --- UNIVERSITY OF HELSINKI}}
 
 \endinput
 %%
-%% End of file `tktltiki.cls'.
+%% End of file
