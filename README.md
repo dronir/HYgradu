@@ -5,10 +5,10 @@ This is a LaTeX documentclass for making a Master's thesis at the University of 
 ## Installation
 
 ### Simple
-Keep the HYgradu.cls file in your working directory when writing the .tex file.
+Keep the HYgradu.cls file and sinetti.pdf in your working directory when writing the .tex file.
 
-### Recommended
-Add HYgradu.cls to your LaTeX distribution tree.
+### More general
+Add HYgradu.cls and sinetti.pdf to your LaTeX distribution tree to use it from any directory. Of course, this is a package you only usually need once so it's not that important.
 
 ## Usage
 The simplest way is just to take the template provided with the class file and start editing that.
