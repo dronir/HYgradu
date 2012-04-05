@@ -1,6 +1,7 @@
+% STEP 1: Choose oneside or twoside. Use the 'draft' option a lot when writing.
 \documentclass[english, oneside]{HYgradu}
+
 \usepackage[utf8]{inputenc} % For UTF8 support. Use UTF8 when saving your file.
-\usepackage[T1]{fontenc} % Font stuff
 \usepackage{lmodern} % Font package
 \usepackage{textcomp}
 \usepackage[pdftex]{color, graphicx} % For pdf output and jpg/png graphics 
@@ -8,14 +9,14 @@
 \usepackage{fancyhdr} % For nicer page headers
 %\usepackage{tikz} % For making vector graphics (hard to learn but powerful)
 %\usepackage{wrapfig} % For nice text-wrapping figures (use at own discretion)
-%\usepackage{amsmath} % For better math (if you know how to use it)
-\usepackage[round]{natbib} % For better bibliography
+\usepackage{amsmath, amssymb} % For better math
+%\usepackage[round]{natbib} % For bibliography
 \usepackage[footnotesize,bf]{caption} % For more control over figure captions
 
 \fussy % Probably not needed but you never know...
 
-% Set up pdf properties and metadata for pdfLaTeX output. You probably don't need
-% to change most of these.
+% OPTIONAL STEP: Set up properties and metadata for the pdf file that pdfLaTeX makes. 
+% But you don't really need to do this unless you want to.
 \hypersetup{
     bookmarks=true,         % show bookmarks bar first?
     unicode=true,           % to show non-Latin characters in Acrobat’s bookmarks
@@ -24,10 +25,10 @@
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
     pdftitle={},            % title
-    pdfauthor={Your Name},  % author
-    pdfsubject={},   % subject of the document
-    pdfcreator={},   % creator of the document
-    pdfproducer={},  % producer of the document
+    pdfauthor={},           % author
+    pdfsubject={},          % subject of the document
+    pdfcreator={},          % creator of the document
+    pdfproducer={pdfLaTeX}, % producer of the document
     pdfkeywords={something} {something else}, % list of keywords for
     pdfnewwindow=true,      % links in new window
     colorlinks=true,        % false: boxed links; true: colored links
@@ -37,7 +38,8 @@
     urlcolor=cyan           % color of external links
 }
 
-% Set up all the information for the titlepage and the abstract page.
+% STEP 2:
+% Set up all the information for the title page and the abstract form.
 % Replace parameters with your information. 
 \title{Your Title Here}
 \author{Your Name}
@@ -46,46 +48,54 @@
 \faculty{Faculty of Whatever}
 \department{Department of Something}
 \address{PL 42 (Kuvitteellinen katu 1)\\00014 Helsingin yliopisto}
-\subject{Your Science}
+\subject{Your Field}
 \prof{prof. Smith}
-\censor{prof. Smythe \\& prof. Someone Else}
+\censors{prof. Smith}{doc. Smythe}{}
 \depositeplace{}
 \additionalinformation{}
 \numberofpagesinformation{\numberofpages\ pages}
 \classification{}
 \keywords{Your keywords here}
-\quoting{``When it comes to \LaTeX, it's better to let someone else do the dirty work.''\\ ---Anonymous}
-
-% Define a shorter way for making a degree symbol in math mode
-\renewcommand{\deg}{^\circ}
+\quoting{``Bachelor's degrees make pretty good placemats if you get them laminated.'' \\---Jeph Jacques}
 
 \begin{document}
 
 % Generate title page.
 \maketitle
 
-% Generate an abstract page. A current limitation is that you can only have one abstract page.
+% STEP 3:
+% Write your abstract (of course you really do this last).
+% You can make several abstract pages (if you want it in different languages), 
+% but you should also then redefine some of the above parameters in the proper 
+% language as well, in between the abstract definitions.
 \begin{abstract}
 Abstract goes here.
 \end{abstract}
 
-% Place ToC
+% Place ToC 
 \mytableofcontents
 
+
+
+
 % -----------------------------------------------------------------------------------
+% STEP 4: Write the thesis.
 % Your actual text starts here. You shouldn't mess with the code above the line except
 % to change the parameters. Removing the abstract and ToC commands will mess up stuff.
-\chapter{First Chapter}
+\chapter{Introduction}
 
-Lorem Ipsum et cetera.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel sem et nisl consectetur porta vitae eget diam. Donec consequat magna vitae nisi tristique dictum id non ipsum. Mauris non mi porta dolor ullamcorper tincidunt. Ut volutpat est nec mi aliquet auctor eleifend nisl ornare. Donec dapibus nunc at purus fermentum pretium laoreet justo fringilla. Nulla pellentesque vulputate nisl eu bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis libero non erat rhoncus tincidunt. Etiam quis ante ut magna feugiat venenatis. Mauris cursus massa non augue aliquam mollis. Fusce dictum, ante quis dapibus scelerisque, velit leo faucibus est, laoreet convallis eros ligula eget orci. Phasellus lobortis tortor id sapien commodo elementum. Sed sed egestas dolor. Nulla massa ligula, dignissim sed auctor a, ullamcorper ac velit. Vivamus porttitor tempus bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-% Uncomment the following and replace foo.bib with
-% your own BibTeX file to make bibliography.
+% STEP 5:
+% Uncomment the following lines and set your .bib file and desired bibliography style
+% to make a bibliography with BibTeX.
+% Alternatively you can use the thebibliography environment if you want to add all
+% references by hand.
 
 %\clearpage
-%\addcontentsline{toc}{chapter}{Bibliography}
-%\bibliographystyle{plainnat}
+%\addcontentsline{toc}{chapter}{Bibliography} % This lines adds the bibliography to the ToC
+%\bibliographystyle{plain}
 %\bibliography{foo.bib}
 
 
