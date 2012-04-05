@@ -1,0 +1,93 @@
+\documentclass[english, oneside]{HYgradu}
+\usepackage[utf8]{inputenc} % For UTF8 support. Use UTF8 when saving your file.
+\usepackage[T1]{fontenc} % Font stuff
+\usepackage{lmodern} % Font package
+\usepackage{textcomp}
+\usepackage[pdftex]{color, graphicx} % For pdf output and jpg/png graphics 
+\usepackage[pdftex, plainpages=false]{hyperref} % For hyperlinks and pdf metadata
+\usepackage{fancyhdr} % For nicer page headers
+%\usepackage{tikz} % For making vector graphics (hard to learn but powerful)
+%\usepackage{wrapfig} % For nice text-wrapping figures (use at own discretion)
+%\usepackage{amsmath} % For better math (if you know how to use it)
+\usepackage[round]{natbib} % For better bibliography
+\usepackage[footnotesize,bf]{caption} % For more control over figure captions
+
+\fussy % Probably not needed but you never know...
+
+% Set up pdf properties and metadata for pdfLaTeX output. You probably don't need
+% to change most of these.
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar first?
+    unicode=true,           % to show non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={},            % title
+    pdfauthor={Your Name},  % author
+    pdfsubject={},   % subject of the document
+    pdfcreator={},   % creator of the document
+    pdfproducer={},  % producer of the document
+    pdfkeywords={something} {something else}, % list of keywords for
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=black,        % color of internal links
+    citecolor=black,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+% Set up all the information for the titlepage and the abstract page.
+% Replace parameters with your information. 
+\title{Your Title Here}
+\author{Your Name}
+\date{\today}
+\level{Master's thesis}
+\faculty{Faculty of Whatever}
+\department{Department of Something}
+\address{PL 42 (Kuvitteellinen katu 1)\\00014 Helsingin yliopisto}
+\subject{Your Science}
+\prof{prof. Smith}
+\censor{prof. Smythe \\& prof. Someone Else}
+\depositeplace{}
+\additionalinformation{}
+\numberofpagesinformation{\numberofpages\ pages}
+\classification{}
+\keywords{Your keywords here}
+\quoting{``When it comes to \LaTeX, it's better to let someone else do the dirty work.''\\ ---Anonymous}
+
+% Define a shorter way for making a degree symbol in math mode
+\renewcommand{\deg}{^\circ}
+
+\begin{document}
+
+% Generate title page.
+\maketitle
+
+% Generate an abstract page. A current limitation is that you can only have one abstract page.
+\begin{abstract}
+Abstract goes here.
+\end{abstract}
+
+% Place ToC
+\mytableofcontents
+
+% -----------------------------------------------------------------------------------
+% Your actual text starts here. You shouldn't mess with the code above the line except
+% to change the parameters. Removing the abstract and ToC commands will mess up stuff.
+\chapter{First Chapter}
+
+Lorem Ipsum et cetera.
+
+
+% Uncomment the following and replace foo.bib with
+% your own BibTeX file to make bibliography.
+
+%\clearpage
+%\addcontentsline{toc}{chapter}{Bibliography}
+%\bibliographystyle{plainnat}
+%\bibliography{foo.bib}
+
+
+\end{document}
+
