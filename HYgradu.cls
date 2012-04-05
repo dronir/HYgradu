@@ -189,7 +189,7 @@
 }
 \RequirePackage{openbib}
 \addto\captionsfinnish{\def\refname{Lähteet}}
-\addto\captionsenglish{\def\enclname{Appendices}}
+\addto\captionsenglish{\def\enclname{References}}
 \addto\captionsswedish{\def\enclname{Bilagor}}
 \renewenvironment{thebibliography}[1]
      {\section*{\refname
