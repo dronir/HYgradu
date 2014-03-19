@@ -188,7 +188,7 @@
   \hspace{1em}%
 }
 \RequirePackage{openbib}
-\addto\captionsfinnish{\def\refname{Lähteet}}
+\addto\captionsfinnish{\def\refname{L\"ahteet}}
 \addto\captionsenglish{\def\enclname{References}}
 \addto\captionsswedish{\def\enclname{Bilagor}}
 \renewenvironment{thebibliography}[1]
@@ -221,7 +221,7 @@
 
 
 \addto\captionsfinnish{%
-  \def\dateofacceptance{hyväksymispäivä}%
+  \def\dateofacceptance{hyv\"aksymisp\"aiv\"a}%
   \def\grade{arvosana}%
   \def\instructor{arvostelija}%
   \def\uh{HELSINGIN YLIOPISTO}%
@@ -239,7 +239,7 @@
 \addto\captionsswedish{%
   \def\dateofacceptance{godk.datum}%
   \def\grade{vitsord}%
-  \def\instructor{bedömare}%
+  \def\instructor{bed\"omare}%
   \def\uh{HELSINGFORS UNIVERSITET}%
   \def\helsinki{Helsingfors}%
   \def\ccs{ACM Computing Classification System (CCS):}%
